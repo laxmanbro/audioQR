@@ -1,0 +1,1 @@
+cat textfile | programm.py
