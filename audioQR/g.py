@@ -1,5 +1,5 @@
 import numpy as np
 import math
 
-St = np.empty([55])
-print(St)
+g = "111000"
+print(type(int(len(g)/2)))

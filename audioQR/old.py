@@ -33,6 +33,7 @@ for i in range(5500):  # defining S(t)
                   mona_ar[2*i+1]*np.sin(2*np.pi*fc*n*Ts))
         n = n+1
 
+
 # print n
 St_arr = np.array(St)
 
@@ -73,10 +74,6 @@ def z4(n):
     return (np.cos(2*np.pi*fc*n*Ts) - np.sin(2*np.pi*fc*n*Ts))
 
 
-countZ1 = 0
-countZ2 = 0
-countZ3 = 0
-countZ4 = 0
 
 n = 0
 new_arr = []
@@ -96,23 +93,19 @@ for j in range(5500):
         a4 = a4 + (rt[n]-z4(n))**2
         n = n+1
 
-    d1 = np.sqrt(a1)
-#     print d1
-    d2 = np.sqrt(a2)
-    d3 = np.sqrt(a3)
-    d4 = np.sqrt(a4)
+    
 
-    min_dist = min([d1, d2, d3, d4])#minimum distance calculation
+    min_dist = min([a1, a2, a3, a4])#minimum distance calculation
 
 #     print min_dist
 
-    if min_dist == d1:
+    if min_dist == a1:
         new_arr.append(1)
         new_arr.append(1)
-    elif min_dist == d2:
+    elif min_dist == a2:
         new_arr.append(-1)
         new_arr.append(1)
-    elif min_dist == d3:
+    elif min_dist == a3:
         new_arr.append(-1)
         new_arr.append(-1)
     else:
